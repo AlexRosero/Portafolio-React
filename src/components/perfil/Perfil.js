@@ -32,7 +32,7 @@ export default function Profile() {
 						Alex Esteban Rosero Gualguan
 					</span>
 					<strong> Técnologo ADSI </strong>
-					<strong> TENGO A UNA PERRA LLAMADA ANGEL, ZORRA</strong>
+					
 
 				</div>
 
