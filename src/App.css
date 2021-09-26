@@ -1,38 +1,239 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.titles{
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    color:black;
+}
+
+
+.title{
+    text-align: center;
+    margin-top: 60px;
+    color: rgb(255, 112, 107) ;
+}
+
+.title1{
+    text-align: center;
+    margin-top: 60px;
+    color: rgb(65, 174, 238) ;
+}
+
+
+
+
+/*---------------------------------------*/
+
+
+
+.container-box{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+.box{
+    width: 550px;
+    height: 250px;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #eeeeee;
+    border-radius: 14px;
+    text-align: center;
+    margin-top: 100px;
+    position: relative;
+
+}
+
+.box3{
+    width: 550px;
+    height: 150px;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #eeeeee;
+    border-radius: 14px;
+    text-align: center;
+    margin-top: 100px;
+    position: relative;
+
+}
+
+
+
+.box img{
+    width: 70%;
+    transition: all 400ms;
+}
+
+.box3 img{
+    width: 70%;
+    transition: all 400ms;
+}
+
+.box h2{
+    font-size: 10px;
+    margin-top: 10px;
+    transition: all 500ms;
+}
+
+
+
+/*Efecto Hover*/
+
+
+.box:hover{
+    background: #fbfbfe;
+}
+
+.box:hover img{
+    transform: translateY(-90px);
+}
+
+.box3:hover svg{
+    transform: translateY(-40px);
+}
+
+
+
+
+
+
+
+/*--------------------------- MENU -------------------------------*/
+
+
+
+/*========== GOOGLE FONTS ==========*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*========== VARIABLES CSS ==========*/
+:root {
+  --header-height: 3.5rem;
+  --nav-width: 219px;
+
+  /*========== Colors ==========*/
+  --first-color: #fc675d;
+  --first-color-light: #98d9f3;
+  --title-color: #020202;
+  --text-color: #262529;
+  --text-color-light: #A5A1AA;
+  --body-color: #F9F6FD;
+  --container-color: #FFFFFF;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: .938rem;
+  --small-font-size: .75rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*========== BASE ==========*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  padding: 1rem 1rem 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*========== HEADER ==========*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--container-color);
+  box-shadow: 0 1px 0 rgba(22, 8, 43, 0.1);
+  padding: 0 1rem;
+  z-index: var(--z-fixed);
+}
+
+.header__container {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: var(--header-height);
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.header__img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__logo {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  display: none;
 }
+
+.header__search {
+  display: flex;
+  padding: .40rem .75rem;
+  background-color: var(--first-color-light);
+  border-radius: .25rem;
+}
+
+.header__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--first-color-light);
+}
+
+.header__input::placeholder {
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+.header__icon, 
+.header__toggle {
+  font-size: 1.2rem;
+}
+
+.header__toggle {
+  color: var(--title-color);
+  cursor: pointer;
+}
+
